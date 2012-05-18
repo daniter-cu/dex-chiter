@@ -34,95 +34,13 @@ public class Driver {
 		documents.add(testDocuments6);
 		documents.add(testDocuments7);
 		
-		Map<String, Double> idf = new HashMap<String, Double>();
 
-		Set<String> searchSet = new HashSet<String>();
+		TfIdfManager manager = new TfIdfManager();
+		List<TfIdfResponse> responseList = manager.calculateTfIdf(searchString, documents);
+
+		// TODO: sort this thing
+		// TODO: return results
 		
-		// Put search string into a set
-		String[] splitSearchString = searchString.split("\\s+");
-		for (String searchWord : splitSearchString) {
-			searchSet.add(searchWord);
-		}
-		
-		for (String document : documents) {
-				
-			// Put document words in a set
-			Set<String> documentSet = new HashSet<String>();
-			String[] splitString = document.split("\\s+");
-			for (String s : splitString) {
-				documentSet.add(s);
-			}
-			
-			// Iterate through search set
-			Iterator<String> it = searchSet.iterator();
-			while (it.hasNext()) {
-				
-				String currentWord = (String) it.next();
-				
-				if (!idf.containsKey(currentWord)) {
-					idf.put(currentWord, 0.0);
-				} 
-				if (documentSet.contains(currentWord)) {
-					idf.put(currentWord, idf.get(currentWord) + 1.0);
-				}
-			}
-		}
-		
-		for (Map.Entry<String, Double> entry : idf.entrySet()) {
-			if (entry.getValue() > 0.0) {
-
-				idf.put(entry.getKey(), Math.log((double)documents.size()/entry.getValue()));
-			}
-		}
-		
-		System.out.println(printMap(idf));
-
-		double[] documentResults = new double[documents.size()];
-		
-		for (int i = 0; i < documents.size(); i++) {
-
-			Map<String, Double> tf = new HashMap<String, Double>();
-			for (String searchWord : splitSearchString) {
-
-				if (!tf.containsKey(searchWord)) {
-					tf.put(searchWord, 0.0);
-				}
-
-				String[] splitString = documents.get(i).split("\\s+");
-				for (String s : splitString) {
-
-					if (searchWord.equals(s)) {
-						tf.put(s, tf.get(s) + 1.0);
-
-					}					
-				}
-			}
-			
-			
-			Double sum = 0.0;
-			for (Map.Entry<String, Double> entry : idf.entrySet()) {
-				Double termFrequency = tf.get(entry.getKey());
-				Double inverseDocumentFrequency = idf.get(entry.getKey());
-				
-				sum = sum + termFrequency * inverseDocumentFrequency;
-			}
-			
-			documentResults[i] = sum;
-			
-		}
-
-
-		for (int i = 0; i < documentResults.length; i++) {
-			System.out.println("i: " + i + " tfidf: " + documentResults[i]);
-		}
 	}
 
-	private static String printMap(Map<String, Double> map) {
-		String s = "";
-		for (Map.Entry<String, Double> entry : map.entrySet()) {
-			s = s + "Key: " + entry.getKey() + " Value: " + entry.getValue() + "\n";
-		}
-
-		return s;
-	}
 }
