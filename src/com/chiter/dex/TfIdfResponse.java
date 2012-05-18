@@ -34,7 +34,6 @@ public class TfIdfResponse implements Comparable<TfIdfResponse> {
 	@Override
 	public int compareTo(TfIdfResponse response) {
 
-
 		if (this.tfIdfValue > response.getTfIdfValue()) {
 			return 1;
 		}
