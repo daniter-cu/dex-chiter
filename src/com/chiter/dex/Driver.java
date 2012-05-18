@@ -13,6 +13,7 @@ public class Driver {
 
 	public static void main (String[] args) {
 
+		//useless comment
 		String searchString = "What is my list of grocery ?";
 
 		List<String> documents = new ArrayList<String>();
