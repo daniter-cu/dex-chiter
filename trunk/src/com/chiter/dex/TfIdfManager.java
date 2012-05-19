@@ -27,7 +27,6 @@ public class TfIdfManager {
 				sum = sum + termFrequency * inverseDocumentFrequency;
 			}
 
-
 			TfIdfResponse response = new TfIdfResponse(document, sum);
 			documentResults.add(response);
 
