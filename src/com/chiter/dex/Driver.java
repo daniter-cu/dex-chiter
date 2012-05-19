@@ -1,12 +1,8 @@
 package com.chiter.dex;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class Driver {
 
@@ -37,10 +33,21 @@ public class Driver {
 
 		TfIdfManager manager = new TfIdfManager();
 		List<TfIdfResponse> responseList = manager.calculateTfIdf(searchString, documents);
-
-		// TODO: sort this thing
+		for (TfIdfResponse response : responseList) {
+			System.out.println(response);
+		}
+		
+		// sort this thing
+		Collections.sort(responseList);
+		
+		System.out.println("---------------------------------------------------------");
 		// TODO: return results
+		for (TfIdfResponse response : responseList) {
+			System.out.println(response);
+		}
+		
 		
 	}
+	
 
 }

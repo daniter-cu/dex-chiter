@@ -35,15 +35,18 @@ public class TfIdfResponse implements Comparable<TfIdfResponse> {
 	public int compareTo(TfIdfResponse response) {
 
 		if (this.tfIdfValue > response.getTfIdfValue()) {
-			return 1;
+			return -1;
 		}
 		else if (this.tfIdfValue == response.getTfIdfValue()) {
 			return 0;
 		}
 		else {
-			return -1;
+			return 1;
 		}
 	}
 
-
+	@Override
+	public String toString() {
+		return String.format("Content [%s], tfidf [%f]", content, tfIdfValue);
+	}
 }
