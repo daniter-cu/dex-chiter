@@ -4,13 +4,13 @@ import java.io.*;
 import java.util.*;
 import opennlp.tools.tokenize.*;
 import opennlp.tools.tokenize.Tokenizer;
-//import org.apache.lucene.analysis.*;
-//import org.apache.lucene.analysis.standard.StandardTokenizer;
-//import org.apache.lucene.analysis.tokenattributes.*;
-//import org.apache.lucene.util.*;
+import org.apache.lucene.analysis.*;
+import org.apache.lucene.analysis.standard.StandardTokenizer;
+import org.apache.lucene.analysis.tokenattributes.*;
+import org.apache.lucene.util.*;
 
 public class OpenNLPTester {
-/*
+
 	public static void main(String[] args) 
 	{
 		//TestTokenizer();
@@ -29,12 +29,13 @@ public class OpenNLPTester {
 		}
 	}
 
-	public static String removeStopWordsAndStem(String input) throws IOException {
+	public static String removeStopWordsAndStem(String input) {
 	    Set<String> stopWords = new HashSet<String>();
 	    stopWords.add("a");
 	    stopWords.add("I");
-	    stopWords.add("the");
+	    stopWords.add("orangutang");
 
+	    input = input.toLowerCase();
 	    TokenStream tokenStream = new StandardTokenizer(
 	            Version.LUCENE_36, new StringReader(input));
 	    tokenStream = new StopFilter(Version.LUCENE_36, tokenStream, stopWords);
@@ -42,12 +43,17 @@ public class OpenNLPTester {
 
 	    StringBuilder sb = new StringBuilder();
 	    CharTermAttribute termAttr = tokenStream.getAttribute(CharTermAttribute.class);
-	    while (tokenStream.incrementToken()) {
-	        if (sb.length() > 0) {
-	            sb.append(" ");
-	        }
-	        sb.append(termAttr.toString());
-	    }
+	    try {
+			while (tokenStream.incrementToken()) {
+			    if (sb.length() > 0) {
+			        sb.append(" ");
+			    }
+			    sb.append(termAttr.toString());
+			}
+		} catch (IOException e) {
+			System.err.println("Tokens are messed up");
+			e.printStackTrace();
+		}
 	    return sb.toString();
 	}
 
@@ -61,5 +67,5 @@ public class OpenNLPTester {
 			System.out.println(s);
 		}
 	}
-*/
+
 }

@@ -3,6 +3,7 @@ package com.chiter.dex;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +14,7 @@ public class Driver {
 	public static void main (String[] args) {
 
 		String searchString = args[0];
+		searchString = OpenNLPTester.removeStopWordsAndStem(searchString);
 		System.out.println(searchString);
 		List<String> documents = new ArrayList<String>();
 		try {
