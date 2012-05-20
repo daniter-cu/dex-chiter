@@ -4,13 +4,13 @@ import java.io.*;
 import java.util.*;
 import opennlp.tools.tokenize.*;
 import opennlp.tools.tokenize.Tokenizer;
-import org.apache.lucene.analysis.*;
-import org.apache.lucene.analysis.standard.StandardTokenizer;
-import org.apache.lucene.analysis.tokenattributes.*;
-import org.apache.lucene.util.*;
+//import org.apache.lucene.analysis.*;
+//import org.apache.lucene.analysis.standard.StandardTokenizer;
+//import org.apache.lucene.analysis.tokenattributes.*;
+//import org.apache.lucene.util.*;
 
 public class OpenNLPTester {
-
+/*
 	public static void main(String[] args) 
 	{
 		//TestTokenizer();
@@ -61,5 +61,5 @@ public class OpenNLPTester {
 			System.out.println(s);
 		}
 	}
-
+*/
 }
