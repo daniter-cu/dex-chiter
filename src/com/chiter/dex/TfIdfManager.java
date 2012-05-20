@@ -18,7 +18,7 @@ public class TfIdfManager {
 
 		for (String document : documents) {
 
-			Map<String, Double> tf = calculateTf(searchString, document);
+			Map<String, Double> tf = calculateTf(searchString, OpenNLPTester.removeStopWordsAndStem(document));
 			Double sum = 0.0;
 			for (Map.Entry<String, Double> entry : idf.entrySet()) {
 				Double termFrequency = tf.get(entry.getKey());
@@ -51,7 +51,7 @@ public class TfIdfManager {
 
 			// Put document words in a set
 			Set<String> documentSet = new HashSet<String>();
-			String[] splitString = document.split("\\s+");
+			String[] splitString = OpenNLPTester.removeStopWordsAndStem(document).split("\\s+");
 			for (String s : splitString) {
 				documentSet.add(s);
 			}
