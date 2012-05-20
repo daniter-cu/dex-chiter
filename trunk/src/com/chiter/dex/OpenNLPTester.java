@@ -13,19 +13,13 @@ public class OpenNLPTester {
 
 	public static void main(String[] args) 
 	{
-		TestTokenizer();
+		//TestTokenizer();
 		TestStemming();
-		TestRemoveStopWords();
-	}
-
-	private static void TestRemoveStopWords() 
-	{
-		
 	}
 
 	private static void TestStemming() 
 	{
-		String s = "I am the man and they, are going, to the parks working!";
+		String s = "I am the man and they, are were is going, to the parks working grocery groceries!";
 		try{
 			System.out.println(removeStopWordsAndStem(s));
 		}
@@ -43,16 +37,16 @@ public class OpenNLPTester {
 
 	    TokenStream tokenStream = new StandardTokenizer(
 	            Version.LUCENE_36, new StringReader(input));
-	    tokenStream = new StopFilter(true, tokenStream, stopWords);
+	    tokenStream = new StopFilter(Version.LUCENE_36, tokenStream, stopWords);
 	    tokenStream = new PorterStemFilter(tokenStream);
 
 	    StringBuilder sb = new StringBuilder();
-	    TermAttribute termAttr = tokenStream.getAttribute(TermAttribute.class);
+	    CharTermAttribute termAttr = tokenStream.getAttribute(CharTermAttribute.class);
 	    while (tokenStream.incrementToken()) {
 	        if (sb.length() > 0) {
 	            sb.append(" ");
 	        }
-	        sb.append(termAttr.term());
+	        sb.append(termAttr.toString());
 	    }
 	    return sb.toString();
 	}
