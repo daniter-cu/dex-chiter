@@ -13,7 +13,7 @@ public class Driver {
 	public static void main (String[] args) {
 
 		String searchString = args[0];
-		
+		System.out.println(searchString);
 		List<String> documents = new ArrayList<String>();
 		try {
 			FileInputStream fstream = new FileInputStream("textfile.txt");
