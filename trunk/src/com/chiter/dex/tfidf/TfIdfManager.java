@@ -12,17 +12,39 @@ import com.chiter.dex.nlp.OpenNLPTester;
 
 public class TfIdfManager {
 	
-	public List<TfIdfResponse> getSortedResults(String file, String searchString) {		
-
+	private List<TfIdfResponse> responseList;
+	private String file;
+	private String searchString;
+	
+	public TfIdfManager(String file, String searchString) {
+		responseList = new ArrayList<TfIdfResponse>();
+		this.file = file;
+		this.searchString = searchString;
+	}
+	
+	public void execute() {
 		List<String> documents = readFromFile(file);
 		
 		TfIdfCalculator manager = new TfIdfCalculator();
-		List<TfIdfResponse> responseList = manager.calculateTfIdf(OpenNLPTester.removeStopWordsAndStem(searchString), documents);
+		responseList = manager.calculateTfIdf(OpenNLPTester.removeStopWordsAndStem(searchString), documents);
 
 		// sort this thing
 		Collections.sort(responseList);
-		
+	}
+	
+	public List<TfIdfResponse> getAllSortedResults() {		
 		return responseList;
+	}
+	
+	public List<TfIdfResponse> getSortedNonZeroResults() {
+		List<TfIdfResponse> nonZeroResponse = new ArrayList<TfIdfResponse>();
+		
+		for (TfIdfResponse response : responseList) {
+			if (response.getTfIdfValue() > 0) {
+				nonZeroResponse.add(response);
+			}
+		}
+		return nonZeroResponse;
 	}
 	
 	private List<String> readFromFile(String file) {

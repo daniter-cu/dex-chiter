@@ -10,10 +10,13 @@ public class Driver {
 	public static void main (String[] args) {
 		String searchString = args[0];
 		
-		TfIdfManager tfIdfManager = new TfIdfManager();
-		List<TfIdfResponse> responseList = tfIdfManager.getSortedResults("textfile.txt", searchString);
+		TfIdfManager tfIdfManager = new TfIdfManager("textfile.txt", searchString);
+		tfIdfManager.execute();
 		
-		Driver.printResponse(responseList);
+		// print non zero tfidf results
+		List<TfIdfResponse> nonZeroResponseList = tfIdfManager.getSortedNonZeroResults();
+		
+		Driver.printResponse(nonZeroResponseList);
 	}
 	
 	private static void printResponse(List<TfIdfResponse> responseList) {
