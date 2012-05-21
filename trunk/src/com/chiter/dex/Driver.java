@@ -8,9 +8,10 @@ import com.chiter.dex.tfidf.TfIdfResponse;
 public class Driver {
 	
 	public static void main (String[] args) {
+		//TODO: Change to get searchString from file
 		String searchString = args[0];
 		
-		TfIdfManager tfIdfManager = new TfIdfManager("textfile.txt", searchString);
+		TfIdfManager tfIdfManager = new TfIdfManager("corpus.txt", searchString);
 		tfIdfManager.execute();
 		
 		// print non zero tfidf results
