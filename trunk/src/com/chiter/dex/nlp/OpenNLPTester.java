@@ -1,6 +1,10 @@
 package com.chiter.dex.nlp;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.util.HashSet;
 import java.util.Set;
@@ -36,10 +40,7 @@ public class OpenNLPTester {
 	}
 
 	public static String removeStopWordsAndStem(String input) {
-	    Set<String> stopWords = new HashSet<String>();
-	    stopWords.add("a");
-	    stopWords.add("I");
-	    stopWords.add("orangutang");
+	    Set<String> stopWords = initStopWordSet();
 
 	    input = input.toLowerCase();
 	    TokenStream tokenStream = new StandardTokenizer(
@@ -61,6 +62,28 @@ public class OpenNLPTester {
 			e.printStackTrace();
 		}
 	    return sb.toString();
+	}
+
+	private static Set<String> initStopWordSet() 
+	{
+		Set<String> list = new HashSet<String>();
+		try {
+			FileInputStream fstream = new FileInputStream("stopwords.txt");
+			DataInputStream in = new DataInputStream(fstream);
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+			String strLine;
+			//Read File Line By Line
+			while ((strLine = br.readLine()) != null)   {
+				list.add(strLine);
+			}
+			//Close the input stream
+			in.close();
+		} catch (Exception e){//Catch exception if any
+			System.err.println("Error: " + e.getMessage());
+		}
+
+		return list;
 	}
 
 	private static void TestTokenizer() 
