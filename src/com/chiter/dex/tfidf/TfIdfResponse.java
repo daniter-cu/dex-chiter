@@ -1,4 +1,4 @@
-package com.chiter.dex;
+package com.chiter.dex.tfidf;
 
 public class TfIdfResponse implements Comparable<TfIdfResponse> {
 
