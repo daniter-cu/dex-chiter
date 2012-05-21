@@ -97,7 +97,7 @@ public class TfIdfCalculator {
 			String[] splitString = document.split("\\s+");
 			for (String s : splitString) {
 
-				if (searchWord.equals(s)) {
+				if (searchWord.equals(s) && !searchWord.isEmpty()) {
 					tf.put(s, tf.get(s) + 1.0);
 
 				}					
