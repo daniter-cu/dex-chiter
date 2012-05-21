@@ -1,4 +1,4 @@
-package com.chiter.dex;
+package com.chiter.dex.nlp;
 
 import java.io.IOException;
 import java.io.StringReader;

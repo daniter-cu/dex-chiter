@@ -1,4 +1,4 @@
-package com.chiter.dex;
+package com.chiter.dex.tfidf;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class TfIdfManager {
+import com.chiter.dex.nlp.OpenNLPTester;
+
+public class TfIdfCalculator {
 
 	public List<TfIdfResponse> calculateTfIdf(String searchString, List<String> documents) {
 
@@ -102,6 +104,5 @@ public class TfIdfManager {
 			}
 		}
 		return tf;
-
 	}
 }
