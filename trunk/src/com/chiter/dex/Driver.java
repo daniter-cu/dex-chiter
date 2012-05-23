@@ -9,9 +9,13 @@ public class Driver {
 	
 	public static void main (String[] args) {
 		//TODO: Change to get searchString from file
+		if (args.length <= 0) {
+			System.out.println("Enter a search string via command line arguments");
+			System.exit(1);
+		}
 		String searchString = args[0];
 		
-		TfIdfManager tfIdfManager = new TfIdfManager("corpus.txt", searchString);
+		TfIdfManager tfIdfManager = new TfIdfManager("corperaplusplus.txt", searchString);
 		tfIdfManager.execute();
 		
 		// print non zero tfidf results
