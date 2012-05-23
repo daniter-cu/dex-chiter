@@ -1,0 +1,8 @@
+Programming questions What is a binary tree?
+Programming answers a binary tree is a structure with nodes and two children for each node
+Programming questions How do you reverse a linked list?
+Programming questions What is the run-time complexity of quick sort
+Programming answers The run-time complexity of quick sort is O(NlogN)
+Programming questions What is the run-time complexity of selection sort
+Programming questions Design a locker storage system
+Programming questions Code a TTL cache
