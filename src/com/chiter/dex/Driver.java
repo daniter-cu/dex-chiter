@@ -9,6 +9,7 @@ public class Driver {
 	
 	public static void main (String[] args) {
 		//TODO: Change to get searchString from file
+		//TODO: Do to do 
 		if (args.length <= 0) {
 			System.out.println("Enter a search string via command line arguments");
 			System.exit(1);
