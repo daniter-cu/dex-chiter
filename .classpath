@@ -2,13 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/lucene-3.6.0/lucene-core-3.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/lucene-3.6.0/lucene-core-3.6.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/lucene-3.6.0/lucene-test-framework-3.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/lucene-3.6.0/lucene-test-framework-3.6.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/apache-opennlp-1.5.2-incubating/lib/jwnl-1.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/apache-opennlp-1.5.2-incubating/lib/opennlp-maxent-3.0.2-incubating.jar"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/apache-opennlp-1.5.2-incubating/lib/opennlp-tools-1.5.2-incubating.jar"/>
-	<classpathentry kind="lib" path="C:/Users/chakerry/Desktop/apache-opennlp-1.5.2-incubating/lib/opennlp-uima-1.5.2-incubating.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/lucene-3.6.0/lucene-core-3.6.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/lucene-3.6.0/lucene-core-3.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/lucene-3.6.0/lucene-test-framework-3.6.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/lucene-3.6.0/lucene-test-framework-3.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/apache-opennlp-1.5.2-incubating/lib/jwnl-1.3.3.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/apache-opennlp-1.5.2-incubating/lib/opennlp-maxent-3.0.2-incubating.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/apache-opennlp-1.5.2-incubating/lib/opennlp-tools-1.5.2-incubating.jar"/>
+	<classpathentry kind="lib" path="/Users/dan/Documents/Projects/apache-opennlp-1.5.2-incubating/lib/opennlp-uima-1.5.2-incubating.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
