@@ -29,7 +29,7 @@ public class OpenNLPTester {
 
 	private static void TestStemming() 
 	{
-		String s = "John's Meraline's";
+		String s = "John's Meraline's food: fsfejs/ lsjdf\\ \"alsdjfsd\" saldkjf; aslkdjf, askjf. Johns asdjflasflksfds sssssssss";
 		try{
 			System.out.println(removeStopWordsAndStem(s));
 		}
@@ -55,7 +55,7 @@ public class OpenNLPTester {
 			    if (sb.length() > 0) {
 			        sb.append(" ");
 			    }
-			    sb.append(termAttr.toString());
+			    sb.append(termAttr.toString().replaceAll("'",""));
 			}
 		} catch (IOException e) {
 			System.err.println("Tokens are messed up");
