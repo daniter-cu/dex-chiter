@@ -29,7 +29,7 @@ public class OpenNLPTester {
 
 	private static void TestStemming() 
 	{
-		String s = "I am the man and they, are were is going, to the parks working grocery groceries!";
+		String s = "John's Meraline's";
 		try{
 			System.out.println(removeStopWordsAndStem(s));
 		}
