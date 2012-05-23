@@ -1,0 +1,8 @@
+What is a binary tree?
+A binary tree is a structure with nodes and two children for each node?
+How do you reverse a linked list?
+What is the run-time complexity of quick sort?
+The run-time complexity of quick sort is O(NlogN)?
+What is the run-time complexity of selection sort?
+Design a locker storage system?
+Code a TTL cache?
