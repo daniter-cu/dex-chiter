@@ -9,9 +9,6 @@ import java.io.StringReader;
 import java.util.HashSet;
 import java.util.Set;
 
-import opennlp.tools.tokenize.SimpleTokenizer;
-import opennlp.tools.tokenize.Tokenizer;
-
 import org.apache.lucene.analysis.PorterStemFilter;
 import org.apache.lucene.analysis.StopFilter;
 import org.apache.lucene.analysis.TokenStream;
@@ -35,7 +32,7 @@ public class OpenNLPTester {
 		}
 		catch(Exception e)
 		{
-			//do ntohing
+			//TODO: Log an error or something, don't just quietly die
 		}
 	}
 
@@ -84,17 +81,6 @@ public class OpenNLPTester {
 		}
 
 		return list;
-	}
-
-	private static void TestTokenizer() 
-	{
-		Tokenizer t = SimpleTokenizer.INSTANCE;
-		// Splits 12th -> '12' and 'th'
-		String[] tokens = t.tokenize("On Nov. 12th 1912 this some bullshit started. For real, this is some business.");
-		for (String s: tokens)
-		{
-			System.out.println(s);
-		}
 	}
 
 }
